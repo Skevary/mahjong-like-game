@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Card} from '@app/components/card.component';
 import {GameService} from '@app/services/game.service';
 
 @Component({
@@ -7,7 +6,7 @@ import {GameService} from '@app/services/game.service';
   template: `
     <div class="deck-container">
       <app-card
-        *ngFor="let card of game.deck; trackBy: identify"
+        *ngFor="let card of game.deck"
         [item]="card"
         (flip)="game.checkConditionOfPair($event)"
       ></app-card>
@@ -21,10 +20,6 @@ export class GameSceneComponent implements OnInit {
   }
 
   ngOnInit() {
-  }
-
-  identify(index, item: Card){
-    return item.id; // bad idea (arr index)
   }
 
 }

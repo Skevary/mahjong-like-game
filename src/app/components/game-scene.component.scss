@@ -4,7 +4,7 @@
   .deck-container {
     display: grid;
     grid-template-columns: repeat(6, minmax(auto, 1fr));
-    grid-template-rows: repeat(5, minmax(auto, 1fr));
+    grid-template-rows: auto;
     grid-gap: 8px;
     width: var(--scene-with);
     height: var(--scene-height);
@@ -18,7 +18,7 @@
     .deck-container {
       display: grid;
       grid-template-columns: repeat(5, minmax(auto, 1fr));
-      grid-template-rows: repeat(6, minmax(auto, 1fr));
+      grid-template-rows: auto;
       grid-gap: 8px;
       width: var(--scene-with);
       height: var(--scene-height);

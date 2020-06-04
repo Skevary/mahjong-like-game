@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Card} from '../components/card.component';
-import {getUniqueValsWithPair} from '../utility';
+import {getPrimesWithPair} from '../utility';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,7 @@ export class GameService {
   }
 
   getNewDeck() {
-    return getUniqueValsWithPair(30, [1, 50])
+    return getPrimesWithPair(50)
       .map((value, index) => ({
         value,
         id: index,
@@ -51,7 +51,7 @@ export class GameService {
       this.prevCard.canBeFlipped = false;
     } else {
       const prevCardId = this.prevCard.id;
-     this.stamp = setTimeout(() => {
+      this.stamp = setTimeout(() => {
         card.isFlipped = false;
         this.deck[prevCardId].isFlipped = false;
       }, 1000);
